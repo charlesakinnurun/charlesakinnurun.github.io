@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <link>/</link>
+    <description>Recent content on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Icarus: Flying Too Close to the Sun (and Loving Every Minute)</title>
+      <link>/articles/icarus-the-end/</link>
+      <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/icarus-the-end/</guid>
+      <description>The Spark It started with rage. Not the quiet, simmering kind—the kind that makes you close a laptop at your cousin&amp;rsquo;s house at 2 AM and think, &amp;ldquo;Dead ass, I&amp;rsquo;m just going to build it myself.&amp;rdquo;
+I was a high school senior with 100+ hours in Aim Labs and a dream of escaping Platinum. My aim was crisp, but my game sense was, in technical terms, &amp;ldquo;dog shit.&amp;rdquo; So I did what every aspiring pro does: I watched Woohoojin, I studied VODs, and I lived in ValoPlant, the only pseudo-replay system Valorant had.</description>
+    </item>
+    
+    <item>
+      <title>From Food Poisoning to Feature Wins! 🎢</title>
+      <link>/articles/icarus-food-edition/</link>
+      <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/icarus-food-edition/</guid>
+      <description>Grade Aid Finally Getting Its Recognition? 🎓 Big news! After roughly two years, Grade Aid is finally getting attention within the Howard County School system. I&amp;rsquo;m scheduled to give a presentation on February 28th, and I&amp;rsquo;m equal parts excited and terrified. Fingers crossed that all this effort is about to pay off!
+My First Dance with Code Generation 🤖 Two weeks ago, if someone mentioned code gen, I would&amp;rsquo;ve run for the hills.</description>
+    </item>
+    
+    <item>
+      <title>Icarus Dev Update: Custom Abilities, Rotations, and Math Gone Wrong</title>
+      <link>/articles/icarus-2nd-update/</link>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/icarus-2nd-update/</guid>
+      <description>The Good News First! 🎉 Remember when I said I was building an open-source Valorant strategy tool? Well, we&amp;rsquo;ve made some serious progress! We now have custom ability icons for (almost) all agents. Sorry Deadlock, you&amp;rsquo;re still on my todo list.
+The biggest win? We&amp;rsquo;ve got every agent imported - including Tejo, who was literally released yesterday. And yes, I&amp;rsquo;m absolutely going to brag about having Tejo&amp;rsquo;s abilities implemented before Valoplant.</description>
+    </item>
+    
+    <item>
+      <title>Hardstuck Dreams to Padding Nightmares: Building an Open-Source Valorant Strategy Tool</title>
+      <link>/articles/icarus-announcement/</link>
+      <pubDate>Fri, 13 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/icarus-announcement/</guid>
+      <description>3&amp;hellip; 2&amp;hellip; 1&amp;hellip;
+I&amp;rsquo;ve been playing Valorant for 3 years&amp;hellip; I&amp;rsquo;ve been hardstuck in platinum for 2 years&amp;hellip; And I&amp;rsquo;ve been trying to get out for 1 year&amp;hellip;
+But alas, I don&amp;rsquo;t have enough time to actually focus and commit to improving. So within my free time, I did the next best thing: VOD reviews of pro-players using a tool called Valoplant.
+The Good, The Bad, and The UI Valoplant is a great tool - it allows you to create and analyze strategies while understanding the game from a technical perspective.</description>
+    </item>
+    
+    <item>
+      <title>Boyant Notes</title>
+      <link>/projects/boyant-notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/boyant-notes/</guid>
+      <description>About Boyant Notes is a simple and powerful app designed for taking notes and maintaining to-do lists. It is perfect for students, business people, and anyone who wants to stay organized and on top of their tasks.
+The app features cross-platform and multi-device capability, allowing users to access their notes and to-do lists on any device where they are logged in. It also offers real-time syncing across devices, ensuring that users always have the most up-to-date information at their fingertips.</description>
+    </item>
+    
+    <item>
+      <title>Grade Aid</title>
+      <link>/projects/hc-grade-aid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/hc-grade-aid/</guid>
+      <description>This app is a grade calculator that is designed specifically for students in the Howard County Public School System (HCPSS). It allows students to input their grades for each class and calculates their overall GPA (grade point average) as well as their final grade for the semester or year. The calculator takes into account the different weighting of classes, such as honors and AP classes, to ensure an accurate calculation of the student&amp;rsquo;s GPA.</description>
+    </item>
+    
+    <item>
+      <title>Icarus Valorant Strategy &amp; Line Ups</title>
+      <link>/projects/icarus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/icarus/</guid>
+      <description>About Icarus is a local-first Valorant strategy planner built for players who want to save, test, and iterate on lineups quickly without being blocked by subscriptions or cloud-only workflows. It started as a personal solution to painful strategy planning limitations and has grown into an open-source project used by 1,000+ players.
+Built with a minimal, fast workflow in mind, Icarus focuses on practical planning: place agents, draw routes and utility, and save your work locally so your prep is always available offline.</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>/privacy-policies/boyant-notes-privacy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/privacy-policies/boyant-notes-privacy/</guid>
+      <description>Sunken In Time built the Boyant Notes as an app. This SERVICE is provided by Sunken In Time at no cost and is intended for use as is.
+This page is used to inform visitors regarding my policies regarding the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
+If you choose to use my Service, then you agree to the collection and use of information in relation to this policy.</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>/privacy-policies/grade-aid-privacy-policy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/privacy-policies/grade-aid-privacy-policy/</guid>
+      <description>Privacy Policy
+Sunken In Time built the Grade Aid app as personal project. This SERVICE is provided by Sunken In Time at no cost and is intended for use as is. Grade Aid or HC Grade Aid is not associated or sponsored by Howard County Public School System and is a personal project.
+This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>/privacy-policies/icarus-privacy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/privacy-policies/icarus-privacy/</guid>
+      <description>Effective Date: 4/4/25
+Thank you for using Icarus! This privacy policy informs you about how we handle data within the Icarus application.
+No Data Collection Icarus operates entirely on your device. We do not collect, transmit, or store any personal data or information created within the application. All data, including whiteboard strategies and any other content you create, remains solely on your device.
+No Internet Connectivity Icarus does not connect to the internet.</description>
+    </item>
+    
+    <item>
+      <title>Support</title>
+      <link>/privacy-policies/boyant-notes-support/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/privacy-policies/boyant-notes-support/</guid>
+      <description>Contact Us If you have any questions of suggestions, do not hesitate to contact me at syntechemail@gmail.com.</description>
+    </item>
+    
+    <item>
+      <title>Terms of Service</title>
+      <link>/privacy-policies/grade-aid-tos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/privacy-policies/grade-aid-tos/</guid>
+      <description>HC Grade Aid - Terms of Service 1. Introduction
+Welcome to HC Grade Aid, a mobile application created independently by Sunken In Time to assist with grade calculation. This app operates offline and is not yet endorsed or associated with the Howard County Public School System.
+2. Services Provided
+HC Grade Aid allows users to calculate their grades based on various factors like individual assignments, exams, and weighted averages.
+3. User Eligibility</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+
+<!-- Mirrored from me.daracloud.uk/articles/icarus-2nd-update/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Mar 2026 07:41:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Icarus Dev Update: Custom Abilities, Rotations, and Math Gone Wrong | </title>
+<meta name="keywords" content="" />
+<meta name="description" content="Where you finally use what you learnt in Pre-calc, and SVGs continue to haunt my dreams">
+<meta name="author" content="Dara Adedeji">
+<link rel="canonical" href="index.html" />
+<link crossorigin="anonymous" href="../../assets/css/stylesheet.min.7bfe087ae72df31787ec7a1360dd05ee246a179b51cf7a30a904b39d7f813b69.css" integrity="sha256-e/4Ieuct8xeH7HoTYN0F7iRqF5tRz3owqQSznX&#43;BO2k=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="../../assets/js/highlight.min.b95bacdc39e37a332a9f883b1e78be4abc1fdca2bc1f2641f55e3cd3dabd4d61.js" integrity="sha256-uVus3DnjejMqn4g7Hni&#43;Srwf3KK8HyZB9V4809q9TWE="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="../../images/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32.png">
+<link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+<link rel="mask-icon" href="../../images/apple-touch-icon.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="../../index.html" title="Home"><span>Home</span></a>
+            </li>
+            <li>
+                <a href="../../projects/index.html" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="../index.html" title="Articles">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li>
+                <a href="../../contact/index.html" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="#">Home</a>&nbsp;»&nbsp;<a href="../index.html">Articles</a></div>
+    <h1 class="post-title">
+      Icarus Dev Update: Custom Abilities, Rotations, and Math Gone Wrong
+    </h1>
+    <div class="post-description">
+      Where you finally use what you learnt in Pre-calc, and SVGs continue to haunt my dreams
+    </div>
+    <div class="post-meta"><span title='2025-01-10 00:00:00 +0000 UTC'>January 10, 2025</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Dara Adedeji</div>
+  </header> 
+  <div class="post-content">
+  <h2 id="the-good-news-first-">The Good News First! 🎉</h2>
+<p>Remember when I said I was building an open-source Valorant strategy tool? Well, we&rsquo;ve made some serious progress! We now have custom ability icons for (almost) all agents. Sorry Deadlock, you&rsquo;re still on my todo list.</p>
+<p>The biggest win? We&rsquo;ve got every agent imported - including Tejo, who was literally released yesterday. And yes, I&rsquo;m absolutely going to brag about having Tejo&rsquo;s abilities implemented before Valoplant. Small victories, right?</p>
+<h2 id="the-great-measurement-mystery-">The Great Measurement Mystery 📏</h2>
+<p>Remember when you thought converting measurements would be simple? Yeah, me too. The journey of implementing custom ability icons turned into an adventure of converting between Icarus&rsquo;s measurement system and Valorant&rsquo;s meters.</p>
+<p>Here&rsquo;s a fun story: I initially used Sova&rsquo;s recon dart as a reference point because&hellip; well, I main Sova, and it seemed logical at the time. I spent hours comparing my implementation with Valoplant&rsquo;s, getting increasingly frustrated when things weren&rsquo;t lining up. After about three hours of hair-pulling, I had a revolutionary thought: &ldquo;Why don&rsquo;t I just check the actual game?&rdquo;</p>
+<p>Plot twist: Valoplant&rsquo;s proposed size for Sova&rsquo;s dart was off by about 3 meters in-game.</p>
+<figure><img src="../../images/valoplant_sova_dart.png"/><figcaption>
+            <h4>Sova&#39;s dart in Valoplant</h4>
+        </figcaption>
+</figure>
+
+<figure><img src="../../images/ingame_sova_dart.png"/><figcaption>
+            <h4>Sova&#39;s dart in-game</h4>
+        </figcaption>
+</figure>
+
+<p>Also, during this debugging marathon, I discovered my map drawing was &ldquo;slightly&rdquo; (read: significantly) elongated. Nothing like fixing one bug to discover three more!</p>
+<h2 id="the-web-plot-twist-">The Web Plot Twist 🌐</h2>
+<p>Remember how I said Icarus would be strictly offline? Well&hellip; plans change! I&rsquo;m considering a web version, but with a twist. The idea is to host it on a free tier initially to make it more accessible. Once we hit a sizeable user base (and it starts costing me money), we&rsquo;ll charge for the website and online sync features - but keep everything free on desktop/iPad applications. Because why make things simple when you can make them interesting?</p>
+<h2 id="current-battles-with-flutter-">Current Battles with Flutter 🥊</h2>
+<h3 id="the-center-point-saga">The Center Point Saga</h3>
+<p>Getting center point dragging to work properly has been&hellip; an experience. Here&rsquo;s what I&rsquo;ve tried:</p>
+<ol>
+<li>
+<p><strong>The Almost Solution</strong>: Calculate the center point when <code>AbilityInfo</code> gets its widget. Works great until you resize the window, then everything breaks because the data is set at compile time, not runtime.</p>
+</li>
+<li>
+<p><strong>The Other Almost Solution</strong>: Set it when the AbilityWidget is used in-app. Perfectly fine until you try to drag an ability for the first time, then it&rsquo;s about as centered as my sleep schedule.</p>
+</li>
+<li>
+<p><strong>The Theoretical Solution</strong>: Make only the ability icon draggable and wrap everything else. Sounds great in theory, still figuring out the implementation. Currently filed under &ldquo;good ideas I haven&rsquo;t broken yet.&rdquo;</p>
+</li>
+</ol>
+<h3 id="the-rotation-saga-">The Rotation Saga 🔄</h3>
+<p>If you ever want to watch a developer lose their mind, ask them to implement dynamic widget rotation in Flutter. Here&rsquo;s why:</p>
+<p>Flutter&rsquo;s <code>Offset.direction</code> returns values in radians from -π to π, which sounds reasonable until you realize it&rsquo;s assuming positive y-axis values go DOWN. Why? Because Flutter&rsquo;s coordinate system starts at the top-left corner. Thanks for the existential crisis, Flutter!</p>
+<p>Here&rsquo;s a diagram incase you&rsquo;re a little confused:
+<figure><img src="https://l7y6qjyp5m.ufs.sh/f/usun6XPoM0UCXCQD7JMcWBO57RMVIl8LFsfHGu6Ub1teynah"/><figcaption>
+            <h4>flutter radians cheat sheet</h4>
+        </figcaption>
+</figure>
+</p>
+<p>After abandoning <code>direction</code> entirely, I went old school with trigonometry. <code>atan()</code> seemed like the answer until edge cases appeared. Finally, <code>atan2()</code> saved the day - shoutout to the friend who recommended it! Though now the widgets snap back to their previous orientation when dragged, because apparently we can&rsquo;t have nice things.</p>
+<p>Here&rsquo;s what it currently looks like:
+<figure><img src="https://l7y6qjyp5m.ufs.sh/f/usun6XPoM0UCpPdLpPeWNaYX3kSziMD5UmKObA6uIe7wB0Zl"/><figcaption>
+            <h4>Current image of icarus</h4>
+        </figcaption>
+</figure>
+</p>
+<h2 id="coming-soon-features-">Coming Soon™ Features 🚀</h2>
+<ul>
+<li>Custom ability widgets for special cases (looking at you, Astra ult and Harbor wall)</li>
+<li>Dynamically scaling ability widgets (pray for me)</li>
+<li>Making everything pretty (goodbye random colors!)</li>
+<li>Fixing the center point and rotation issues (estimated time: somewhere between &ldquo;a day&rdquo; and &ldquo;when pigs fly&rdquo;)</li>
+<li>More painting options and proper undo functionality</li>
+<li>Saving capabilities (once I figure out all the ability stuff)</li>
+<li>That YouTube video I promised (it&rsquo;s coming, really!)</li>
+</ul>
+<p>Want to check out the project or contribute? Find it at <a href="https://github.com/SunkenInTime/icarus">Github</a></p>
+<p><em>Well that&rsquo;s all folks&hellip;Toodles</em>😝</p>
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+      
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"530af2e7f3484bdaa9e20b6e2aec3431","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+
+
+<!-- Mirrored from me.daracloud.uk/articles/icarus-2nd-update/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Mar 2026 07:41:31 GMT -->
+</html>

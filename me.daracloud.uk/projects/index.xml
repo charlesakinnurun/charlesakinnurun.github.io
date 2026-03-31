@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on </title>
+    <link>/projects/</link>
+    <description>Recent content in Projects on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Boyant Notes</title>
+      <link>/projects/boyant-notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/boyant-notes/</guid>
+      <description>About Boyant Notes is a simple and powerful app designed for taking notes and maintaining to-do lists. It is perfect for students, business people, and anyone who wants to stay organized and on top of their tasks.
+The app features cross-platform and multi-device capability, allowing users to access their notes and to-do lists on any device where they are logged in. It also offers real-time syncing across devices, ensuring that users always have the most up-to-date information at their fingertips.</description>
+    </item>
+    
+    <item>
+      <title>Grade Aid</title>
+      <link>/projects/hc-grade-aid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/hc-grade-aid/</guid>
+      <description>This app is a grade calculator that is designed specifically for students in the Howard County Public School System (HCPSS). It allows students to input their grades for each class and calculates their overall GPA (grade point average) as well as their final grade for the semester or year. The calculator takes into account the different weighting of classes, such as honors and AP classes, to ensure an accurate calculation of the student&amp;rsquo;s GPA.</description>
+    </item>
+    
+    <item>
+      <title>Icarus Valorant Strategy &amp; Line Ups</title>
+      <link>/projects/icarus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/icarus/</guid>
+      <description>About Icarus is a local-first Valorant strategy planner built for players who want to save, test, and iterate on lineups quickly without being blocked by subscriptions or cloud-only workflows. It started as a personal solution to painful strategy planning limitations and has grown into an open-source project used by 1,000+ players.
+Built with a minimal, fast workflow in mind, Icarus focuses on practical planning: place agents, draw routes and utility, and save your work locally so your prep is always available offline.</description>
+    </item>
+    
+  </channel>
+</rss>

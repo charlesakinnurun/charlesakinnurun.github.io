@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Articles on </title>
+    <link>/articles/</link>
+    <description>Recent content in Articles on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="/articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Icarus: Flying Too Close to the Sun (and Loving Every Minute)</title>
+      <link>/articles/icarus-the-end/</link>
+      <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/icarus-the-end/</guid>
+      <description>The Spark It started with rage. Not the quiet, simmering kind—the kind that makes you close a laptop at your cousin&amp;rsquo;s house at 2 AM and think, &amp;ldquo;Dead ass, I&amp;rsquo;m just going to build it myself.&amp;rdquo;
+I was a high school senior with 100+ hours in Aim Labs and a dream of escaping Platinum. My aim was crisp, but my game sense was, in technical terms, &amp;ldquo;dog shit.&amp;rdquo; So I did what every aspiring pro does: I watched Woohoojin, I studied VODs, and I lived in ValoPlant, the only pseudo-replay system Valorant had.</description>
+    </item>
+    
+    <item>
+      <title>From Food Poisoning to Feature Wins! 🎢</title>
+      <link>/articles/icarus-food-edition/</link>
+      <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/icarus-food-edition/</guid>
+      <description>Grade Aid Finally Getting Its Recognition? 🎓 Big news! After roughly two years, Grade Aid is finally getting attention within the Howard County School system. I&amp;rsquo;m scheduled to give a presentation on February 28th, and I&amp;rsquo;m equal parts excited and terrified. Fingers crossed that all this effort is about to pay off!
+My First Dance with Code Generation 🤖 Two weeks ago, if someone mentioned code gen, I would&amp;rsquo;ve run for the hills.</description>
+    </item>
+    
+    <item>
+      <title>Icarus Dev Update: Custom Abilities, Rotations, and Math Gone Wrong</title>
+      <link>/articles/icarus-2nd-update/</link>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/icarus-2nd-update/</guid>
+      <description>The Good News First! 🎉 Remember when I said I was building an open-source Valorant strategy tool? Well, we&amp;rsquo;ve made some serious progress! We now have custom ability icons for (almost) all agents. Sorry Deadlock, you&amp;rsquo;re still on my todo list.
+The biggest win? We&amp;rsquo;ve got every agent imported - including Tejo, who was literally released yesterday. And yes, I&amp;rsquo;m absolutely going to brag about having Tejo&amp;rsquo;s abilities implemented before Valoplant.</description>
+    </item>
+    
+    <item>
+      <title>Hardstuck Dreams to Padding Nightmares: Building an Open-Source Valorant Strategy Tool</title>
+      <link>/articles/icarus-announcement/</link>
+      <pubDate>Fri, 13 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/icarus-announcement/</guid>
+      <description>3&amp;hellip; 2&amp;hellip; 1&amp;hellip;
+I&amp;rsquo;ve been playing Valorant for 3 years&amp;hellip; I&amp;rsquo;ve been hardstuck in platinum for 2 years&amp;hellip; And I&amp;rsquo;ve been trying to get out for 1 year&amp;hellip;
+But alas, I don&amp;rsquo;t have enough time to actually focus and commit to improving. So within my free time, I did the next best thing: VOD reviews of pro-players using a tool called Valoplant.
+The Good, The Bad, and The UI Valoplant is a great tool - it allows you to create and analyze strategies while understanding the game from a technical perspective.</description>
+    </item>
+    
+  </channel>
+</rss>
